@@ -29,4 +29,13 @@ FROM commande as c
 LEFT JOIN client as clt
 ON c.id_client = clt.id_client;
 
+-- 05_etape
+-- nombre de commandes et chiffre d'affaires par serveur
+SELECT s.nom_serveur, COUNT(c.id) AS nombre_commandes, SUM(cp.prix * cpl.quantite) AS chiffre_affaires
+FROM serveur AS s
+LEFT JOIN commande AS c ON s.id_serveur = c.id_serveur
+LEFT JOIN commande_plat AS cpl ON c.id = cpl.id_commande
+LEFT JOIN carte_plat AS cp ON cpl.id_plat = cp.id
+GROUP BY s.id_serveur
+ORDER BY chiffre_affaires DESC;
 
