@@ -21,3 +21,12 @@ JOIN commande as c
 ON c.id = cpl.id_commande
 GROUP BY c.id
 ORDER BY montant_total DESC;
+
+-- 04_etape
+-- liste des commandes avec le nom du client, en affichant « client de passage » quand il n'y en a pas
+SELECT c.id AS commande_id, COALESCE(clt.nom_client , 'client de passage') AS client_nom 
+FROM commande as c
+LEFT JOIN client as clt
+ON c.id_client = clt.id_client;
+
+

@@ -8,3 +8,6 @@
 # 03_etape
 - commande (**id**,date_commande)
 - commande_plat (**id**,#id_commande,#id_plat,quantite) 
+
+# 04_etape
+- client(**id**,nom_client,telephone)
