@@ -31,3 +31,4 @@ UPDATE commande SET id_serveur = 2 WHERE id = 2;
 UPDATE commande SET id_table = 2 WHERE id = 2;
 
 -- Une table de la salle et une commande sont deux chose differente : car une table peut avoir 2 clients a la fois mais un commande n'as qu'un seule client
+-- Le nom table pose un probleme en sql car ca peut etre confondu avec le mot cle table 
